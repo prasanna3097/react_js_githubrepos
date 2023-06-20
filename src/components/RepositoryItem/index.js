@@ -17,7 +17,7 @@ const RepositoryItem = props => {
           alt="stars"
           className="icon"
         />
-        <p className="repo-text">{repositoryData.stars}</p>
+        <p className="repo-text">{repositoryData.stars} stars</p>
       </div>
       <div className="repo-icons">
         <img
@@ -25,7 +25,7 @@ const RepositoryItem = props => {
           alt="forks"
           className="icon"
         />
-        <p className="repo-text">{repositoryData.forks}</p>
+        <p className="repo-text">{repositoryData.forks} forks</p>
       </div>
       <div className="repo-icons">
         <img
@@ -33,7 +33,7 @@ const RepositoryItem = props => {
           alt="open issues"
           className="icon"
         />
-        <p className="repo-text">{repositoryData.issuesCount}</p>
+        <p className="repo-text">{repositoryData.issuesCount} open issues</p>
       </div>
     </li>
   )

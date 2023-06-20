@@ -16,7 +16,7 @@ const languageFiltersData = [
 // Write your code here
 class GithubPopularRepos extends Component {
   state = {
-    selectedLanguageFilter: languageFiltersData[0].id,
+    selectedLanguageFilter: 'ALL',
     isLoading: true,
     repositoriesData: [],
   }
