@@ -1,0 +1,21 @@
+/* Write your CSS here */
+.selected-language {
+  background-color: transparent;
+  border: 1px solid #0284c7;
+  color: #0284c7;
+  font-family: 'Roboto';
+  font-size: 25px;
+  margin: 10px;
+  border-radius: 18px;
+  padding: 5px;
+}
+.unselected-language {
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-family: 'Roboto';
+  font-size: 25px;
+  margin: 10px;
+  border-radius: 18px;
+  padding: 5px;
+}

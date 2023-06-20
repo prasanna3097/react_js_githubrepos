@@ -1,0 +1,38 @@
+/* Write your CSS here */
+.respository-container {
+  list-style-type: none;
+  background-color: #f8f8ff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.repository-img {
+  height: 60px;
+  width: 60px;
+}
+.repo-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.repo-name {
+  color: #e73959;
+  font-size: 15px;
+  font-family: 'Roboto';
+}
+.icon {
+  height: 10px;
+  width: 10px;
+  margin-right: 3px;
+}
+.repo-text {
+  color: #1e293b;
+  font-family: 'Roboto';
+  font-size: 10px;
+}
