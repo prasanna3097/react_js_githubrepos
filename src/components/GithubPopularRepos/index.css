@@ -24,3 +24,18 @@
   flex-wrap: wrap;
   margin: 40px;
 }
+.failure-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.failure-img {
+  height: 300px;
+  width: 300px;
+}
+.failure-heading {
+  color: #0f172a;
+  font-family: 'Lobster';
+  font-weight: bold;
+}

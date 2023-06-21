@@ -13,12 +13,18 @@ const languageFiltersData = [
   {id: 'CSS', language: 'CSS'},
 ]
 
+const apiStatusConstants = {
+  success: 'SUCCESS',
+  failure: 'FAILURE',
+  inprogress: 'IN_PROGRESS',
+}
 // Write your code here
 class GithubPopularRepos extends Component {
   state = {
     selectedLanguageFilter: 'ALL',
-    isLoading: true,
+
     repositoriesData: [],
+    apiStatus: '',
   }
 
   componentDidMount() {
@@ -39,7 +45,10 @@ class GithubPopularRepos extends Component {
       imageUrl: eachRepo.avatar_url,
       forks: eachRepo.forks_count,
     }))
-    this.setState({repositoriesData: updatedData, isLoading: false})
+    this.setState({
+      repositoriesData: updatedData,
+      apiStatus: apiStatusConstants.success,
+    })
   }
 
   renderRepositoryItems = () => {
@@ -80,13 +89,37 @@ class GithubPopularRepos extends Component {
     )
   }
 
+  renderFailureView = () => (
+    <div className="failure-container">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/api-failure-view.png"
+        alt="failure view"
+        className="failure-img"
+      />
+      <h1 className="failure-heading">Something Went Wrong</h1>
+    </div>
+  )
+
+  renderAllLanguages = () => {
+    const {apiStatus} = this.state
+    switch (apiStatus) {
+      case apiStatusConstants.success:
+        return this.renderRepositoryItems()
+      case apiStatusConstants.failure:
+        return this.renderFailureView()
+      case apiStatusConstants.inprogress:
+        return this.renderLoader()
+      default:
+        return null
+    }
+  }
+
   render() {
-    const {isLoading} = this.state
     return (
       <div className="repo-container">
         <h1 className="main-headinG">Popular</h1>
         {this.renderLanguageFilterItems()}
-        {isLoading ? this.renderLoader() : this.renderRepositoryItems()}
+        {this.renderAllLanguages()}
       </div>
     )
   }
